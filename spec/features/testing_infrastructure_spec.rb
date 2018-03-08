@@ -3,10 +3,14 @@
 feature 'Submitting names' do
 
   scenario 'Players enter their names' do
-    visit('/')
-    fill_in(:p1, with: 'John')
-    fill_in(:p2, with: 'Simon')
-    click_button('Fight')
+    sign_in_and_play
     expect(page).to have_content 'John v Simon'
+  end
+end
+
+feature 'P1 being able to see other players hit points' do
+  scenario 'while in play, be able to see other players hit points' do
+    sign_in_and_play
+    expect(page).to have_content 'Simon Hit points: 85%'
   end
 end
