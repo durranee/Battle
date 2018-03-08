@@ -4,8 +4,22 @@
     <meta charset="utf-8">
     <title>Battle Play!!</title>
   </head>
+  <style type="text/css">
+    .attack{
+      background:rgb(169,56,38);
+      color: white; height:25px;
+      width:150px;
+      border-radius: 15px;
+      font-family: Arial;
+      font-weight: bold;
+    }
+  </style>
   <body>
-    <h1><%=@p1%> v <%=@p2%></h1>
-    <%=@p2%> Hit points: 85%
+    <h1>Want To Fight?</h1>
+    <h2><%=@p1%> v <%=@p2%></h2>
+    <%=@p2%>: 80HP
+    <form action="/attack">
+      <input class='attack' type="submit" name="ATTACK!" value="ATTACK!">
+    </form>
   </body>
 </html>

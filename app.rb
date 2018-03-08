@@ -8,8 +8,6 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    # @p1 = params[:p1]
-    # @p2 = params[:p2]
     session[:p1] = params[:p1]
     session[:p2] = params[:p2]
     redirect '/play'
@@ -18,9 +16,15 @@ class Battle < Sinatra::Base
   get '/play' do
     @p1 = session[:p1]
     @p2 = session[:p2]
-    erb :play
+    erb(:play)
   end
 
+  get '/attack' do
+    puts "sessions are: " + session[:p1] + " " + session[:p2]
+    @p1 = session[:p1]
+    @p2 = session[:p2]
+    erb(:attack)
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

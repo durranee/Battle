@@ -11,6 +11,6 @@ end
 feature 'P1 being able to see other players hit points' do
   scenario 'while in play, be able to see other players hit points' do
     sign_in_and_play
-    expect(page).to have_content 'Simon Hit points: 85%'
+    expect(page).to have_content 'Simon: 80HP'
   end
 end
