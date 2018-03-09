@@ -16,10 +16,10 @@
   </style>
   <body>
     <h1>Want To Fight?</h1>
-    <h2><%=@p1%> v <%=@p2%></h2>
-    <%=@p2%>: 80HP
+    <h2><%=@p1.name%> v <%=@p2.name%></h2>
+    <%=@p2.name%>: <%=@p2.hp%>HP
     <form action="/attack">
-      <input class='attack' type="submit" name="ATTACK!" value="ATTACK!">
+      <input class = 'attack' type="submit" name="ATTACK!" value="ATTACK!">
     </form>
   </body>
 </html>
