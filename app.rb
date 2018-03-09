@@ -23,9 +23,9 @@ class Battle < Sinatra::Base
   get '/attack' do
     @p1 = $game.p1
     @p2 = $game.p2
-    $game.attack(@p2)
+    $game.attack($game.current_player)
+    $game.swap_turns
     redirect '/play'
-# erb(:attack)
   end
   # start the server if ruby file executed directly
   run! if app_file == $0
